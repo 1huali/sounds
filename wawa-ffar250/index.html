@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <audio controls>
-      <source src="assets/sounds/clouds to earth.mp3" type="audio/mpeg">
-      <source src="assets/sounds/waterfalls.mp3" type="audio/mpeg">
-      <source src="assets/sounds/back to reality.mp3" type="audio/mpeg">
+    <audio id="audio1" controls>
+      <source class="notPlayingTrack" src="assets/sounds/clouds to earth.mp3" type="audio/mpeg">
     </audio>
+    <audio id="audio2" controls hidden>
+    <source class="notPlayingTrack" src="assets/sounds/waterfalls.mp3" type="audio/mpeg">
+  </audio>
+    <audio id="audio3" controls hidden>
+    <source class="notPlayingTrack" src="assets/sounds/back to reality.mp3" type="audio/mpeg">
+  </audio>
+
     <meta charset="utf-8">
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
@@ -21,11 +26,21 @@
   </head>
 
   <body>
-<section>
-  <p id="audio1" class="tracks">1.</p>
-  <p id="audio2" class="tracks">2.</p>
-  <p id="audio3" class="tracks">3.</p>
+
+<section id="trackSection">
+  <p class="playingTrack">> clouds to earth.mp3</p>
+  <p class="playingTrack">> waterfalls.mp3</p>
+  <p class="playingTrack">> back to reality.mp3</p>
 </section>
+
+<section id="buttonSection">
+  <!-- <button id="playButton">Play</button> -->
+  <button id="nextButton">Next</button>
+  <button id="previousButton">Previous</button>
+  <!-- <button id="pauseButton">Pause</button> -->
+  <!-- <button id="stopButton">Stop</button> -->
+      </section>
+
     <!-- My script(s) -->
     <script src="js/script.js"></script>
   </body>

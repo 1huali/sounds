@@ -1,6 +1,8 @@
-/*********************************************
+.playingTrack{
+    text-decoration: underline;
+    stroke: plum;
+}
 
-Here is a description of any special CSS used.
-By default that's nothing.
-
-**********************************************/
+.notPlayingTrack{
+    text-decoration: none;
+}
