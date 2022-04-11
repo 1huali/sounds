@@ -9,10 +9,12 @@ window.onload = function (){
     "use strict";
     
     let playlist =[];
-    let audio1= document.getElementById(`audio1`);
-    let audio2= document.getElementById(`audio2`);
-    let audio3= document.getElementById(`audio3`);
+    let audio1="assets/sounds/clouds to earth.mp3";
+    let audio2= "assets/sounds/waterfalls.mp3";
+    let audio3= "assets/sounds/back to reality.mp3";
     
+    let audioPlayer = document.getElementById(`audio1`);
+
     //set current
     let currentTrack = audio1;
     
@@ -28,22 +30,16 @@ window.onload = function (){
     playlist.push(audio3);
     
     let nextButton= document.getElementById(`nextButton`);
-    
+    let previousButton = document.getElementById(`previousButton`);
     // window.requestAnimationFrame(animate)
     
     nextButton.addEventListener("click", function (event){
-        
-    //currentTrack=`audio1`
-    
-      //  for (let i=0; i < playlist.length; i++){
+
     
     if(previousTrack!==null){
-        previousTrack.pause(); 
+        audioPlayer.pause(); 
     }
     
-    currentTrack.play();
-    titleChange();
-    previousTrack =currentTrack;
     
     currentTrackIndex++;
     
@@ -54,7 +50,38 @@ window.onload = function (){
     currentTrack = playlist[currentTrackIndex];
     console.log(currentTrack);
     console.log(previousTrack);
-         
+      
+    audioPlayer.src= currentTrack;
+    //resets the pointer on the player 
+    audioPlayer.currentTime=0;
+    audioPlayer.play();
+    titleChange();
+    previousTrack =currentTrack;
+
+    });
+
+    previousButton.addEventListener("click", function (event){
+
+        if(currentTrack!==null){
+            audioPlayer.pause(); 
+        }
+        
+        
+        currentTrackIndex--;
+        
+        if(currentTrackIndex ===-1){
+            currentTrackIndex = playlist.length-1;
+        
+        }
+        currentTrack = playlist[currentTrackIndex];
+          
+        audioPlayer.src= currentTrack;
+        //resets the pointer on the player 
+        audioPlayer.currentTime=0;
+        audioPlayer.play();
+        titleChange();
+    
+        
     });
     
     // function animate(){
