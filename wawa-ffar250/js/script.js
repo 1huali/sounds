@@ -31,6 +31,10 @@ window.onload = function (){
     
     let nextButton= document.getElementById(`nextButton`);
     let previousButton = document.getElementById(`previousButton`);
+
+
+    let titles = document.getElementsByClassName("tracks");
+
     // window.requestAnimationFrame(animate)
     
     nextButton.addEventListener("click", function (event){
@@ -55,7 +59,7 @@ window.onload = function (){
     //resets the pointer on the player 
     audioPlayer.currentTime=0;
     audioPlayer.play();
-    titleChange();
+    titleChange(currentTrackIndex);
     previousTrack =currentTrack;
 
     });
@@ -79,23 +83,24 @@ window.onload = function (){
         //resets the pointer on the player 
         audioPlayer.currentTime=0;
         audioPlayer.play();
-        titleChange();
+        titleChange(currentTrackIndex);
     
         
     });
     
     // function animate(){
     
-    function titleChange(){
-        // track playing underlined
+    function titleChange(currentTrackIndex){
+        // resets tracks titles
             for (let i=0; i < playlist.length; i++){
-            if (i === currentTrack){
-                    playlist[i].classList.remove("notPlayingTrack");
-          playlist[i].classList.add("playingTrack");
+                titles[i].classList.add("notPlayingTrack");         
+                titles[i].classList.remove("playingTrack");
           }
-        
-    }
-    
+                  // track playing underlined
+          titles[currentTrackIndex].classList.remove("notPlayingTrack");         
+          titles[currentTrackIndex].classList.add("playingTrack");
+    // }
+    console.log(titles[currentTrackIndex]);
     }
     // }
 } //end onLoad
