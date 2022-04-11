@@ -42,6 +42,7 @@ window.onload = function (){
     }
     
     currentTrack.play();
+    titleChange();
     previousTrack =currentTrack;
     
     currentTrackIndex++;
@@ -58,22 +59,16 @@ window.onload = function (){
     
     // function animate(){
     
-    // function titleChange(){
+    function titleChange(){
         // track playing underlined
-        //     for (let i=0; i < playlist.length; i++){
-                //     playlist[i].element.classList.remove(playlist[currentTrackIndex]);
-    
-        //   playlist[i].element.classList.add(playlist[currentTrackIndex]);
+            for (let i=0; i < playlist.length; i++){
+            if (i === currentTrack){
+                    playlist[i].classList.remove("notPlayingTrack");
+          playlist[i].classList.add("playingTrack");
+          }
         
-    
-    
-        //   if (currentTrackIndex===3){
-        //     playlist[i].element.textContent="";
-        //   } else {
-        //     playlist[i].element.textContent=playlist[i].trackDisplayText;
-        //   }
-        
-    // }
-    
-    // }
     }
+    
+    }
+    // }
+} //end onLoad
