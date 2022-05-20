@@ -1,0 +1,16 @@
+#body{
+color: plum;
+}
+
+.body:hover{
+    color: black;
+}
+
+.playingTrack{
+    text-decoration: underline;
+    /* stroke: plum; */
+}
+
+.notPlayingTrack{
+    text-decoration: none;
+}
