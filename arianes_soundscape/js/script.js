@@ -1,8 +1,8 @@
 /**
-Title of Project
-Author Name
+mp3 player
+Wawa Li
 
-1. audio controls only shows at play, title  change color when is playing
+1. audio controls only shows at play, title  change color when is playing. loops back when list is done.
 */
 window.onload = function (){
 
